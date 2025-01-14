@@ -1,0 +1,27 @@
+Method: WSL – Windows Subsystem for Linux 
+
+#dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+#dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+#wsl --set-default-version 2
+
+if the above command failed down the package directly from the wsl site: 
+
+download this package:
+https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
+ 
+
+
+to check all the available OS: 
+#wsl -l -o
+
+
+To install a specific OS :
+#wsl --install -d OracleLinux_9_1
+
+To directly login to a available linux server :
+
+#wsl -d OracleLinux_7_9
+
+To logout from linux:
+#exit
