@@ -1,0 +1,139 @@
+Cluster & Context Management:
+
+View current context:
+kubectl config current-context
+
+Switch context (e.g., between clusters):
+kubectl config use-context <context-name>
+
+List all contexts:
+kubectl config get-contexts
+
+View cluster information:
+kubectl cluster-info
+
+Pod Management:
+
+List all pods in the current namespace:
+kubectl get pods
+
+List all pods in all namespaces:
+kubectl get pods --all-namespaces
+
+Describe a pod:
+kubectl describe pod <pod-name>
+
+View logs of a specific pod:
+kubectl logs <pod-name>
+
+View logs from a specific container within a pod:
+kubectl logs <pod-name> -c <container-name>
+
+Delete a pod:
+kubectl delete pod <pod-name>
+
+Run a pod (for testing purposes):
+kubectl run <pod-name> --image=<image-name>
+
+Deployment & ReplicaSets:
+
+List deployments:
+kubectl get deployments
+
+Create a deployment:
+kubectl create deployment <deployment-name> --image=<image-name>
+
+Scale a deployment (e.g., to 3 replicas):
+kubectl scale deployment <deployment-name> --replicas=3
+
+Get the status of a deployment:
+kubectl rollout status deployment/<deployment-name>
+
+Rollback a deployment:
+kubectl rollout undo deployment/<deployment-name>
+
+Services & Networking:
+
+List services:
+kubectl get svc
+
+Describe a service:
+kubectl describe svc <service-name>
+
+Expose a deployment as a service:
+kubectl expose deployment <deployment-name> --port=<port> --target-port=<target-port>
+
+Port-forward to a pod (useful for debugging):
+kubectl port-forward pod/<pod-name> <local-port>:<remote-port>
+
+Namespace Management:
+
+List namespaces:
+kubectl get namespaces
+
+Create a new namespace:
+kubectl create namespace <namespace-name>
+
+Set namespace for kubectl commands (default to a specific namespace):
+kubectl config set-context --current --namespace=<namespace-name>
+
+Node Management:
+
+List nodes:
+kubectl get nodes
+
+Describe a node:
+kubectl describe node <node-name>
+
+Cordon a node (mark as unschedulable):
+kubectl cordon <node-name>
+
+Drain a node (evict pods from the node):
+kubectl drain <node-name> --ignore-daemonsets --delete-local-data
+
+Uncordon a node (make it schedulable again):
+kubectl uncordon <node-name>
+
+Resource Management:
+
+Get resource usage (CPU, memory, etc.):
+kubectl top nodes
+kubectl top pods
+
+Get detailed information on any resource:
+kubectl describe <resource-type> <resource-name>
+
+Get resources in YAML or JSON format:
+kubectl get <resource-type> <resource-name> -o yaml
+kubectl get <resource-type> <resource-name> -o json
+
+Create resources from a YAML or JSON file:
+kubectl apply -f <file-name>.yaml
+
+Delete resources using a file:
+kubectl delete -f <file-name>.yaml
+
+Configuration & Secrets:
+
+View all config maps:
+kubectl get configmap
+
+Create a config map from a file:
+kubectl create configmap <configmap-name> --from-file=<path-to-file>
+
+View all secrets:
+kubectl get secrets
+
+Create a secret from a file:
+kubectl create secret generic <secret-name> --from-file=<path-to-file>
+
+Miscellaneous:
+
+Run a shell inside a pod (useful for debugging):
+kubectl exec -it <pod-name> -- /bin/bash
+
+Get the version of kubectl and the cluster:
+kubectl version
+
+Get detailed information about a specific resource:
+kubectl describe <resource-type> <resource-name>

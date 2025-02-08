@@ -1,0 +1,86 @@
+Basic Git Commands
+
+git init
+Initializes a new Git repository in the current directory.
+
+git clone <repo_url>
+Clones a remote repository to your local machine.
+
+git clone https://github.com/user/repo.git
+git status
+Displays the current status of the repository, including changes that have been made but not yet committed.
+
+git status
+git add <file>
+Stages a file for commit (or . to stage all changes).
+
+git add file.txt
+git add .
+git commit -m "message"
+Commits the staged changes with a message describing the change.
+
+git commit -m "Initial commit"
+git push
+Pushes the committed changes to the remote repository (usually GitHub).
+
+git push origin main
+git pull
+Fetches changes from the remote repository and merges them with the local branch.
+
+git pull origin main
+git fetch
+Downloads updates from the remote repository without merging them.
+
+git fetch
+git branch
+Lists all the branches in your repository.
+
+git branch
+git checkout <branch>
+Switches to a different branch.
+
+
+git checkout feature-branch
+git merge <branch>
+Merges the specified branch into your current branch.
+
+
+git merge feature-branch
+git log
+Shows the commit history for the current branch.
+
+git log
+git diff
+Displays the differences between your working directory and the staging area.
+
+git diff
+GitHub-Specific Commands
+git remote add origin <repo_url>
+Links your local repository to a remote GitHub repository (use when you’ve created a repo but haven’t connected it yet).
+
+git remote add origin https://github.com/user/repo.git
+git push -u origin <branch>
+Pushes your branch to GitHub and sets the upstream branch.
+
+git push -u origin main
+git pull origin <branch>
+Pulls changes from a specific branch on the remote repository.
+
+git pull origin main
+git remote -v
+Lists all the remotes associated with your repository.
+
+git remote -v
+git push --force
+Forces a push to overwrite the remote branch (use with caution!).
+
+git push --force
+Useful Git Configurations
+git config --global user.name "Your Name"
+Sets your name for commits.
+
+git config --global user.name "Your Name"
+git config --global user.email "youremail@example.com"
+Sets your email for commits.
+
+git config --global user.email "youremail@example.com"
